@@ -89,11 +89,11 @@ export const getMe = async (req, res) => {
     try {
         const user = await User.findById(req.userId);
 
-        if (!user) {
-            return res.json({
-                message: 'Такого користувача не існує'
-            })
-        }
+        // if (!user) {
+        //     return res.json({
+        //         message: 'Такого користувача не існує'
+        //     })
+        // }
 
         const token = jwt.sign(
             { id: user._id, },
